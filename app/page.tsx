@@ -4,10 +4,5 @@ import MyPatternPage from '@/components/MyPatternPage';
 import React from 'react';
 
 export default function Home() {
-  return (
-    <div className="">
-      <MyPatternPage />
-      <FunnelExample />
-    </div>
-  );
+  return <div className=""></div>;
 }
