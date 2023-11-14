@@ -11,11 +11,7 @@ const Providers = ({ children }: ProvidersProps) => {
   const [client] = React.useState(
     () =>
       new QueryClient({
-        defaultOptions: {
-          queries: {
-            suspense: true,
-          },
-        },
+        defaultOptions: {},
       }),
   );
   return (

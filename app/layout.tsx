@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Providers from '@/components/Providers';
 import { Suspense } from 'react';
+import { ErrorBoundary } from '@suspensive/react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Suspense fallback={<div>로딩 서스펜스</div>}>
-          <Providers>{children}</Providers>
-        </Suspense>
+        <ErrorBoundary fallback={<div>에러바운더리</div>}>
+          <Suspense fallback={<div>로딩 서스펜스</div>}>
+            <Providers>{children}</Providers>
+          </Suspense>
+        </ErrorBoundary>
       </body>
     </html>
   );
