@@ -11,7 +11,11 @@ const Providers = ({ children }: ProvidersProps) => {
   const [client] = React.useState(
     () =>
       new QueryClient({
-        defaultOptions: {},
+        defaultOptions: {
+          queries: {
+            gcTime: 10 * 60,
+          },
+        },
       }),
   );
   return (
