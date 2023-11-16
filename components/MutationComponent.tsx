@@ -6,6 +6,7 @@ interface MutationComponentProps {}
 
 const MutationComponent = ({}: MutationComponentProps) => {
   const addTextMutation = useMutation({
+    mutationKey: ['text-mutation'],
     mutationFn: async (text: string) => {
       await new Promise((resolve) => {
         setTimeout(resolve, 5000);
